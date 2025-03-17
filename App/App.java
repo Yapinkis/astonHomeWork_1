@@ -6,11 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static Service.CompleteTask.completeTask;
+
 public class App {
-    private static List<Task> tasks = new ArrayList<>();
+    public static List<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        tasks.add(new Task("one"));
+        tasks.add(new Task("two"));
+        tasks.add(new Task("three"));
+        tasks.add(new Task("four"));
         while (true) {
             System.out.println("Выберете задачу");
             System.out.println(" " +
@@ -23,6 +29,9 @@ public class App {
             int number = scanner.nextInt();
             scanner.nextLine();
             switch (number) {
+                case 5:
+                    completeTask();
+                    break;
                 case 6:
                     System.out.println("Программа завершена");
                     return;
