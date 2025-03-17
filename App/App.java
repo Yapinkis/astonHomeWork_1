@@ -1,13 +1,16 @@
 package App;
 
 import Model.Task;
+import Service.DeleteAllTasks;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static Service.DeleteAllTasks.deleteAllTasks;
+
 public class App {
-    private static List<Task> tasks = new ArrayList<>();
+    public static List<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -23,6 +26,10 @@ public class App {
             int number = scanner.nextInt();
             scanner.nextLine();
             switch (number) {
+                case 4:
+                    deleteAllTasks();
+                    System.out.println("Все задачи удалены");
+                    break;
                 case 6:
                     System.out.println("Программа завершена");
                     return;
