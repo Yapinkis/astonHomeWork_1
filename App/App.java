@@ -7,13 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static Service.DeleteTask.deleteTask;
+
 public class App {
     public static List<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Выберете команду");
+            System.out.println("Выберете задачу");
             System.out.println(" " +
                     "\n 1 - Добавить задачу" +
                     "\n 2 - Показать список задач" +
@@ -28,6 +30,11 @@ public class App {
                     System.out.println("Введите наименование задачи");
                     String task = scanner.nextLine();
                     AddTask.addTask(task);
+                    break;
+                case 3:
+                    System.out.println("Введите наименование задачи");
+                    String task = scanner.nextLine();
+                    deleteTask(task);
                     break;
                 case 6:
                     System.out.println("Программа завершена");
