@@ -2,6 +2,7 @@ package App;
 
 import Model.Task;
 import Service.ShowAllTasks;
+import Service.AddTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Выберете задачу");
+            System.out.println("Выберете команду");
             System.out.println(" " +
                     "\n 1 - Добавить задачу" +
                     "\n 2 - Показать список задач" +
@@ -24,6 +25,11 @@ public class App {
             int number = scanner.nextInt();
             scanner.nextLine();
             switch (number) {
+                case 1:
+                    System.out.println("Введите наименование задачи");
+                    String task = scanner.nextLine();
+                    AddTask.addTask(task);
+                    break;
                 case 2:
                     System.out.println("Вывод списка задач");
                     ShowAllTasks.showAllTasks();
