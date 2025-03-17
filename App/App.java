@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 import static Service.DeleteTask.deleteTask;
 
+import static Service.CompleteTask.completeTask;
+
 public class App {
     public static List<Task> tasks = new ArrayList<>();
 
@@ -35,6 +37,9 @@ public class App {
                     System.out.println("Введите наименование задачи");
                     String task = scanner.nextLine();
                     deleteTask(task);
+                    break;
+                case 5:
+                    completeTask();
                     break;
                 case 6:
                     System.out.println("Программа завершена");
