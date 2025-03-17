@@ -28,4 +28,11 @@ public class Task {
     public LocalDateTime getAddTime() {
         return addTime;
     }
+
+    @Override
+    public String toString() {
+        return ("Наименование задачи: " + description + "\n" +
+                "Дата создания: " + addTime +
+                "\nЗадача завершена: " + completed + "\n");
+    }
 }
