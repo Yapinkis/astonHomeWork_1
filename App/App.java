@@ -1,6 +1,7 @@
 package App;
 
 import Model.Task;
+import Service.ShowAllTasks;
 import Service.AddTask;
 
 import java.util.ArrayList;
@@ -28,6 +29,10 @@ public class App {
                     System.out.println("Введите наименование задачи");
                     String task = scanner.nextLine();
                     AddTask.addTask(task);
+                    break;
+                case 2:
+                    System.out.println("Вывод списка задач");
+                    ShowAllTasks.showAllTasks();
                     break;
                 case 6:
                     System.out.println("Программа завершена");
