@@ -18,14 +18,7 @@ public class App {
     public static List<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
-        tasks.add(new Task("one"));
-        tasks.add(new Task("two"));
-        tasks.add(new Task("three"));
         Scanner scanner = new Scanner(System.in);
-        tasks.add(new Task("one"));
-        tasks.add(new Task("two"));
-        tasks.add(new Task("three"));
-        tasks.add(new Task("four"));
         while (true) {
             System.out.println("Выберете команду");
             System.out.println(" " +
@@ -50,8 +43,8 @@ public class App {
                     break;
                 case 3:
                     System.out.println("Введите наименование задачи");
-                    String task = scanner.nextLine();
-                    deleteTask(task);
+                    String taskForDel = scanner.nextLine();
+                    deleteTask(taskForDel);
                     break;
                 case 4:
                     deleteAllTasks();
