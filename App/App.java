@@ -9,9 +9,10 @@ import Service.AddTask;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import static Service.DeleteAllTasks.deleteAllTasks;
 import static Service.DeleteTask.deleteTask;
-
+import static Service.CompleteTask.completeTask;
 
 public class App {
     public static List<Task> tasks = new ArrayList<>();
@@ -21,6 +22,10 @@ public class App {
         tasks.add(new Task("two"));
         tasks.add(new Task("three"));
         Scanner scanner = new Scanner(System.in);
+        tasks.add(new Task("one"));
+        tasks.add(new Task("two"));
+        tasks.add(new Task("three"));
+        tasks.add(new Task("four"));
         while (true) {
             System.out.println("Выберете команду");
             System.out.println(" " +
@@ -33,6 +38,7 @@ public class App {
             int number = scanner.nextInt();
             scanner.nextLine();
             switch (number) {
+
                 case 1:
                     System.out.println("Введите наименование задачи");
                     String task = scanner.nextLine();
@@ -50,6 +56,9 @@ public class App {
                 case 4:
                     deleteAllTasks();
                     System.out.println("Все задачи удалены");
+                    break;
+                case 5:
+                    completeTask();
                     break;
                 case 6:
                     System.out.println("Программа завершена");
