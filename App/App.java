@@ -1,14 +1,17 @@
 package App;
 
 import Model.Task;
+
+import Service.DeleteAllTasks;
 import Service.ShowAllTasks;
 import Service.AddTask;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import static Service.DeleteAllTasks.deleteAllTasks;
 import static Service.DeleteTask.deleteTask;
+
 
 public class App {
     public static List<Task> tasks = new ArrayList<>();
@@ -43,6 +46,10 @@ public class App {
                     System.out.println("Введите наименование задачи");
                     String task = scanner.nextLine();
                     deleteTask(task);
+                    break;
+                case 4:
+                    deleteAllTasks();
+                    System.out.println("Все задачи удалены");
                     break;
                 case 6:
                     System.out.println("Программа завершена");
