@@ -35,8 +35,8 @@ public class App {
                     break;
                 case 3:
                     System.out.println("Введите наименование задачи");
-                    String task = scanner.nextLine();
-                    deleteTask(task);
+                    String taskDel = scanner.nextLine();
+                    deleteTask(taskDel);
                     break;
                 case 5:
                     completeTask();
